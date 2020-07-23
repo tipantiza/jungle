@@ -13,15 +13,25 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Category</th>
-          <th>Price <%=@categories.inspect%></th>
-          <th>Qty Remaining</th>
+          <th>Categories</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
+      <% @categories.each do |category| %>
+            <tr>
+              <td>
+                <h4><%= category.name %></h4>
+              </td>
+              <td>
+                <%= link_to fa_icon('trash'), [:new, :admin, :category], class: 'btn btn-sm btn-danger' %>
+              </td>
+            </tr>
+      <%end  %>
+
       </tbody>
-    </table>
+      </table>
+
 
   </div>
 
