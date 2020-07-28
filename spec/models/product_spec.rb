@@ -22,7 +22,6 @@ RSpec.describe Product, type: :model do
 
     it "should error when not given a price value" do
       @product = Product.create(name: 'shirt', quantity: 10, price: nil, category: @category)
-      puts @product.errors.full_messages
       expect(@product.errors.full_messages).to include("Price can't be blank")
     end
 
