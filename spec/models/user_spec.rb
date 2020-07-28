@@ -134,7 +134,54 @@ RSpec.describe User, type: :model do
         expect(@user.valid?).to be false
       end
     end
+  end
 
+  describe '.authenticate_with_credentials' do
+    it 'should return user when given correct password' do
+      @user = User.create(
+          first_name: 'landon',
+          last_name: 'tipantiza',
+          email: 'landontipantiza@gmail.com', 
+          password:'password', 
+          password_confirmation: 'password'
+        )
+      @a_user = User.authenticate_with_credentials("landontipantiza@gmail.com", 'password')
+      expect(@a_user).to eql(@user)
+    end
 
+    it 'should return false when wrong password' do
+      @user = User.create(
+          first_name: 'landon',
+          last_name: 'tipantiza',
+          email: 'landontipantiza@gmail.com', 
+          password:'password', 
+          password_confirmation: 'password'
+        )
+      @a_user = User.authenticate_with_credentials("landontipantiza@gmail.com", 'wrong_password')
+      expect(@a_user).to be false
+    end
+    it 'should return user when white space is in the email' do
+      @user = User.create(
+          first_name: 'landon',
+          last_name: 'tipantiza',
+          email: 'landontipantiza@gmail.com', 
+          password:'password', 
+          password_confirmation: 'password'
+        )
+      @a_user = User.authenticate_with_credentials("  landontipantiza@gmail.com  ", 'password')
+      expect(@a_user).to eql(@user)
+    end
+
+    it 'should return user when wrong case is in the email' do
+      @user = User.create(
+          first_name: 'landon',
+          last_name: 'tipantiza',
+          email: 'landontipantiza@gmail.com', 
+          password:'password', 
+          password_confirmation: 'password'
+        )
+      @a_user = User.authenticate_with_credentials("landontipantiza@gmail.COM", 'password')
+      expect(@a_user).to eql(@user)
+    end
   end
 end
