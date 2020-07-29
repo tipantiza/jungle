@@ -3,6 +3,12 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 Great first ruby project, great taste for what t would be like to jump into a project with a new language and be productive as soon as possible and got to add some cool feature.
 
+!["screen shot of pruducts/home page"]("https://github.com/tipantiza/jungle/blob/master/docs/product:home-page.png?raw=true")
+!["screen shot of admin categories page"]("https://github.com/tipantiza/jungle/blob/master/docs/admin-catergories.png?raw=true")
+!["screen shot of login page"]("https://github.com/tipantiza/jungle/blob/master/docs/login-page.png?raw=true")
+
+
+
 ## Setup
 
 1. Run `bundle install` to install dependencies
