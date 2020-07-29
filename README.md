@@ -1,7 +1,7 @@
 # Jungle
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
-
+Great first ruby project, great taste for what t would be like to jump into a project with a new language and be productive as soon as possible and got to add some cool feature.
 
 ## Setup
 
